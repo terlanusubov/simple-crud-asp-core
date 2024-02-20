@@ -1,0 +1,55 @@
+﻿@model UserAddRequest
+<div id="tableProgress" class="py-5 col-lg-12 col-12 layout-spacing">
+    <div class="statbox widget box box-shadow">
+        <div class="widget-header">
+            <div class="row">
+                <div class="pt-3 col-xl-12 col-md-12 col-sm-12 col-12">
+                    <h4>Yeni istifadəçi yaratmaq üçün formu doldurun.</h4>
+                </div>
+
+            </div>
+        </div>
+        <div class="widget-content widget-content-area">
+
+            <div class="form-group mb-4">
+                <form action="@Url.Action("Add","User")" method="post">
+
+                    <div class="form-group-wrapper" style="display:flex;flex-direction:column; align-items:center; justify-content:center">
+                        <div class="form-group" style="width:35%;">
+                            <label for="username">Ad:</label>
+                            <input value="@Model?.UserName" min="0" name="UserName" type="text" class="form-control" id="username" />
+                            @Html.ValidationMessageFor(c => c.UserName)
+                        </div>
+
+                        <div class="form-group" style="width:35%;">
+                            <label for="userSurname">Soyad:</label>
+                            <input value="@Model?.UserSurname" min="0" name="UserSurname" type="text" class="form-control" id="userSurname" />
+                            @Html.ValidationMessageFor(c => c.UserSurname)
+                        </div>
+
+                        <div class="form-group" style="width:35%;">
+                            <label for="email">E-poçt:</label>
+                            <input value="@Model?.UserEmail" min="0" name="UserEmail" type="email" class="form-control" id="email" />
+                            @Html.ValidationMessageFor(c => c.UserEmail)
+                        </div>
+
+                        <div class="form-group" style="width:35%;">
+                            <button class="btn btn-success" style="width:100%" type="submit">Yadda saxla</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section CSS {
+   
+
+}
+
+@section SCRIPTS {
+   
+}
